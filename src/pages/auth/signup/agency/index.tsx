@@ -1,31 +1,54 @@
-import { FormEvent } from 'react'
+import { FormEvent, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
  
 const signupAgencyForm = () => {
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault()
-        // Add logic for form submission
+  
+  const [step, setStep] = useState(1);
+  const [selectedPack, setSelectedPack] = useState(''); // State to track selected pack
+  const [acceptTerms, setAcceptTerms] = useState(false); // State to track acceptance of terms
+
+    const handleSubmit1 = (e: FormEvent) => {
+      e.preventDefault();
+      // Add logic for step 1 submission
+      setStep(2); // Move to the next step
       };
- 
+      const handleSubmit2 = (e: FormEvent) => {
+        e.preventDefault();
+        // Add logic for step 1 submission
+       alert('Hello kk');
+        };
+
+        const handleSelectChange = (e) => {
+          setSelectedPack(e.target.value);
+        };
+        
+  const handleCheckboxChange = () => {
+    setAcceptTerms(!acceptTerms);
+  };
     return (
-      <div className="login-box">
-      <h2>SignUp</h2>
-      <form onSubmit={handleSubmit}>
+      <div className="singupAgency">
+     
+
+      {step === 1 && (
+        <div className="login-box">
+        <h2>SignUp</h2>
+      <form onSubmit={handleSubmit1}>
       <div className="user-box">
-          <input type="email" name="email" required />
+          <input type="text" name="email"  />
           <label>Company Name</label>
         </div>
         <div className="user-box">
-          <input type="email" name="email" required />
+          <input type="text" name="email"  />
           <label>Username</label>
         </div>
        
         <div className="password-container">
   <div className="user-box">
-    <input type="password" name="password" required />
+    <input type="password" name="password"  />
     <label>Password</label>
   </div>
   <div className="user-box">
-    <input type="password" name="passwordConfirmation" required />
+    <input type="password" name="passwordConfirmation"  />
     <label>Password Confirmation</label>
   </div>
 </div>
@@ -37,7 +60,7 @@ const signupAgencyForm = () => {
     name="companyDescription"
     className="editable-content"
     placeholder="Company Description"
-    required
+    
   />
       </div>
        <div className="buttun">
@@ -52,7 +75,82 @@ const signupAgencyForm = () => {
         
        </div>
       </form>
+      </div>
 
+)}
+
+{step === 2 && (
+  <div className="login-box login-box-2">
+         <form className="agency2"onSubmit={handleSubmit2}>
+        <div className="agency2">
+           
+<div className="container">
+  <div className="card card-1">
+    <h2>Basic</h2>
+    <h3>0ETH<span>/mo.</span></h3>
+    <p>Suitable for beginners</p>
+    <ul>
+      <li className="aval">1 offer</li>
+      <li className="aval">10 contract</li>
+    
+    </ul>
+    <button className="select">Choose this plan</button>
+  </div>
+  <div className="card card-2 hot-badge">
+    <h2>Premium</h2>
+    <h3>0.05ETH<span>/mo.</span></h3>
+    <p>Suitable for freelancers</p>
+    <ul>
+    <li className="aval">10 offer</li>
+      <li className="aval">100 contract</li>
+    </ul>
+    <button className="select">Choose this plan</button>
+  </div>
+  <div className="card card-3">
+    <h2>Gold</h2>
+    <h3>1ETH<span>/mo.</span></h3>
+    <p>Suitable for businesses</p>
+    <ul>
+    <li className="aval">+100 offer</li>
+      <li className="aval">+100000 contract</li>
+    </ul>
+    <div className='buttun'style={
+      {
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+       }
+    }>
+
+    <button className="select">
+     Choose this plan</button>
+    </div>
+  </div>
+</div>  
+        </div>
+
+        
+        
+          {/* <div className="buttun">
+            <button type="submit">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              submit &#8594;
+            </button> 
+           </div> */}
+        </form>
+        </div>
+
+      )}
+
+
+
+
+
+
+{/* loader */}
       <div className="main-fader agency" >
   <div className="loader">
     <svg viewBox="0 0 866 866" xmlns="http://www.w3.org/2000/svg">
