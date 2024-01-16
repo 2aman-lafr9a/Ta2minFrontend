@@ -1,21 +1,19 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState } from "react"
 
-const signinForm = () => {
+const SigninForm = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(formData);
-    alert('Hello ' + formData.username);
-    // Add logic for form submission
-  };
+    e.preventDefault()
+    window.location.href = "/"
+  }
 
   return (
     <div className="login-box signin">
@@ -27,6 +25,7 @@ const signinForm = () => {
             name="username"
             value={formData.username}
             onChange={handleChange}
+            autoComplete="off"
             required
           />
           <label htmlFor="username">Username</label>
@@ -43,10 +42,10 @@ const signinForm = () => {
         </div>
         <div className="buttun">
           <button type="submit">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span/> 
+            <span/> 
+            <span/> 
+            <span/> 
             Submit
           </button>
         </div>
@@ -84,8 +83,8 @@ const signinForm = () => {
   </div>
   </div>
       </div>
-    );
-  };
+    )
+  }
   
-  export default signinForm;
+  export default SigninForm
   

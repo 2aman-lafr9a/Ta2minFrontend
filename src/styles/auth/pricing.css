@@ -1,82 +1,89 @@
 @charset "UTF-8";
+
 * {
   box-sizing: border-box;
 }
 
- 
-.container {
+.containerP {
   margin: 0 auto;
   text-align: center;
   white-space: nowrap;
 }
 
-.card {
+.cardP {
   display: inline-block;
   position: relative;
-  background: linear-gradient(#141e30, #243b55);
-  color: white;
+  background: black; /* Adjusted background color */
+  border: #03e9f4 1px solid;
+  color: #ffffff; /* Adjusted text color */
   width: 300px;
   height: 450px;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 0 11px 26px 1px #03e9f4, inset 0 -16px 90px #03e9f4;
 }
-.card h2 {
+
+.cardP h2 {
   margin: 0;
   width: 100%;
   font-size: 30px;
-  background: linear-gradient(0,0,0,.5);
+  background: linear-gradient(0, 0, 0, 0.5);
   padding: 20px 0;
-  color: #EDDDD4;
+  color: #edddd4;
   box-shadow: inset 0px 5px 4px -4px #ecddd461;
 }
-.card h3 {
+
+.cardP h3 {
   margin: 20px 0;
   font-size: 60px;
   text-shadow: 3px 2px 2px #283d3b38;
 }
-.card h3 span {
+
+.cardP h3 span {
   font-size: 20px;
 }
-.card p {
+
+.cardP p {
   font-style: italic;
   margin: 0 0 30px 0;
 }
-.card ul {
+
+.cardP ul {
   text-align: left;
   padding: 0 50px;
   margin: 0;
 }
-.card ul li {
+
+.cardP ul li {
   display: block;
 }
-.card ul li:not(:last-child) {
+
+.cardP ul li:not(:last-child) {
   margin-bottom: 10px;
 }
-.card ul li.aval::before {
+
+.cardP ul li.aval::before,
+.cardP ul li.unaval::before {
   font-family: "Font Awesome 5 Free";
- 
   font-weight: 900;
   font-size: 20px;
-  color: #197278;
   width: 40px;
   display: inline-block;
 }
-.card ul li.unaval::before {
-  font-family: "Font Awesome 5 Free";
-   
-  font-weight: 900;
-  font-size: 20px;
-  color: #C44536;
-  width: 40px;
-  display: inline-block;
+
+.cardP ul li.aval::before {
+  color: #197278; /* Adjusted color for available */
 }
-.card .select {
+
+.cardP ul li.unaval::before {
+  color: #c44536; /* Adjusted color for unavailable */
+}
+
+.cardP .select {
   position: absolute;
   bottom: 0;
-display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -91,46 +98,40 @@ display: flex;
   font-family: inherit;
   box-shadow: 0 8px 18px 4px #283d3b4d;
 }
-.card .select::before {
+
+.cardP .select::before {
   font-family: "Font Awesome 5 Free";
-  /* cart icom */
-  
   font-weight: 900;
   margin-right: 15px;
 }
-.card-1, .card-3 {
+
+.cardP-1,
+.cardP-3 {
   position: relative;
   transform: scale(0.9);
 }
-.card-1 {
+
+.cardP-1 {
   left: 40px;
   margin-left: -60px;
   z-index: 0;
-}
-.card-1 h2 {
-  background:  rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, 0.8);
   color: #03e9f4;
 }
-.card-2 h2 {
-  background:  rgba(0,0,0,.8);
-  color: #03e9f4;
 
+.cardP-2 h2 {
+  background: rgba(0, 0, 0, 0.8);
+  color: #03e9f4;
 }
-.card-2 {
+
+.cardP-2 {
   z-index: 1;
-  
 }
-.card-3 {
+
+.cardP-3 {
   left: -40px;
   margin-right: -60px;
   z-index: 0;
-}
-.card-3 h2 {
-  background:  rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, 0.8);
   color: #03e9f4;
-
 }
-
- 
-
- 

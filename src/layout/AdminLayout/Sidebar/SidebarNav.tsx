@@ -182,10 +182,10 @@ export default function SidebarNav() {
       <SidebarNavTitle>CONTRACT</SidebarNavTitle>
 
       <SidebarNavGroup toggleIcon={faStar} toggleText="TEST">
-        <SidebarNavItem icon={faRightToBracket} href="login">
+        <SidebarNavItem icon={faRightToBracket} href="/auth/signin">
           TEST
         </SidebarNavItem>
-        <SidebarNavItem icon={faAddressCard} href="register">
+        <SidebarNavItem icon={faAddressCard} href="/auth/signup/agency">
           TEST
         </SidebarNavItem>
         <SidebarNavItem icon={faBug} href="#">
